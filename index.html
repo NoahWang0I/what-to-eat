@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>午餐吃什麼</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container d-flex justify-content-center border p-5">
+    <div>
+      <button class="btn btn-primary">產生</button>
+      <div class="card mt-2" style="min-width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">-</h5>
+          <a href="#" class="card-link" target="_blank">Link</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+  integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script>
+  const btn = document.querySelector('.btn')
+  const title = document.querySelector('.card-title')
+  const link = document.querySelector('.card-link')
+  const data = [
+    { 'name': '飽哥健康餐盒', 'link': 'https://maps.app.goo.gl/5cYfRbY4F6q1UgRy6' },
+    { 'name': '美而美早餐店', 'link': 'https://maps.app.goo.gl/z1o1oQj1oeDRBeur6' },
+    { 'name': '角屋關東煮', 'link': 'https://maps.app.goo.gl/Rx9yenGSu7683Qo59' },
+    { 'name': '哥萊早餐屋', 'link': 'https://maps.app.goo.gl/CLSB8ref2oTm3aCJ8' },
+    { 'name': '鍾何精緻雲吞料理', 'link': 'https://maps.app.goo.gl/rQNjzCaucstBpM219' },
+    { 'name': '浯粥', 'link': 'https://maps.app.goo.gl/iknYrU2LDUASkF8a9' },
+    { 'name': '四維紅麵線', 'link': 'https://maps.app.goo.gl/UrBsRerMLte5h54n8' },
+    { 'name': '海福岡日本料理', 'link': 'https://maps.app.goo.gl/E6QfgtrEbsU44pCq6' },
+    { 'name': '牛莊園牛肉麵', 'link': 'https://maps.app.goo.gl/Wz7iAjC9gEhb1Fp47' },
+    { 'name': '春桂雞肉', 'link': 'https://maps.app.goo.gl/xxtbWDYYtbUy7UUp9' },
+    { 'name': '老虱雞台南虱目魚', 'link': 'https://maps.app.goo.gl/7w8uWLQ4MkgB88U8A' },
+    { 'name': '君悅排骨', 'link': 'https://maps.app.goo.gl/1rvadpUfBCYs6XEq9' },
+    { 'name': '拾貳食', 'link': 'https://maps.app.goo.gl/vnrHjgrZdtsa9roP7' },
+    { 'name': '老師傅精緻餐盒', 'link': 'https://maps.app.goo.gl/4wtm65imeHxxWeaF7' },
+    { 'name': '欽豪燒腊盒餐', 'link': 'https://maps.app.goo.gl/s62DMCcDDjUE4YDc7' },
+    { 'name': '二師兄肉羹', 'link': 'https://maps.app.goo.gl/wRB1nqWCeto81mme8' },
+    { 'name': '弁當食驗所', 'link': 'https://maps.app.goo.gl/EgfN3uXMVAZ672a29' },
+    { 'name': '大安麵線之家', 'link': 'https://maps.app.goo.gl/ZQZKDFyucsvKd9RY9' },
+    { 'name': '四維路麵攤', 'link': 'https://maps.app.goo.gl/M86UqNey7oySsVhi7' },
+    { 'name': '鰻屋燒烤便當', 'link': 'https://maps.app.goo.gl/JjmVyj9m9bdU77ND7' },
+    { 'name': 'ä couple coffee', 'link': 'https://maps.app.goo.gl/opZ48gtYFgzXYpSGA' },
+    { 'name': '東區魷魚焿', 'link': 'https://maps.app.goo.gl/wFwv4GdcRNBasohL9' },
+    { 'name': '無名便當店', 'link': 'https://maps.app.goo.gl/5gD1fCJJqa4NFwc47' },
+    { 'name': '大眾自助餐', 'link': 'https://maps.app.goo.gl/sAPSru4fkARSS64D6' },
+    { 'name': '敦化便當店', 'link': 'https://maps.app.goo.gl/JMZDguhqdLaJfbKV7' },
+    { 'name': '知味家盒餐', 'link': 'https://maps.app.goo.gl/8efK7NDmUQGR1Yrs7' },
+    { 'name': '八方雲集 (台北敦南店)', 'link': 'https://maps.app.goo.gl/KDkE1Npi4h1GNmbz7' },
+    { 'name': '金仙魚丸店', 'link': 'https://maps.app.goo.gl/Tz9L3KUJvSADwpQPA' },
+    { 'name': 'HELLO! 你好 健康餐', 'link': 'https://maps.app.goo.gl/THkcD7RyouawcD4Q6' },
+    { 'name': '蘭芳麵食館', 'link': 'https://maps.app.goo.gl/48giMw7VTNkJBwbJ8' },
+    { 'name': '老蘿蔔', 'link': 'https://maps.app.goo.gl/RBVpYDuEmdx9cvvP9' },
+    { 'name': '麥味登-敦南遠企店', 'link': 'https://maps.app.goo.gl/yP68NJbuqHqNG1pJA' }
+  ];
+  btn.addEventListener('click', function () {
+    const count = data.length
+    const randomNum = Math.floor(Math.random() * count)
+
+    title.textContent = data[randomNum]['name']
+    link.href = data[randomNum]['link']
+  })
+</script>
+
+</html>
