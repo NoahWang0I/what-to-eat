@@ -10,18 +10,28 @@
 </head>
 
 <body>
-  <div class="container d-flex justify-content-center border p-5">
-    <div>
+  <div class="container d-flex justify-content-center border mt-2 p-3">
+    <div class="w-100">
       <button class="btn btn-primary">產生</button>
-      <div class="card mt-2" style="min-width: 30rem;">
+      <div class="card mt-2 w-100">
         <div class="card-body">
           <h5 class="card-title">-</h5>
           <a href="#" class="card-link" target="_blank">Link</a>
         </div>
       </div>
     </div>
-
   </div>
+  <style>
+    @media screen and (max-width:576px) {
+      .container {
+        width: 100%;
+      }
+
+      .card {
+        min-width: auto;
+      }
+    }
+  </style>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
   integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
