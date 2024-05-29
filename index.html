@@ -11,17 +11,27 @@
 
 <body>
   <div class="container">
-    <p>- 飲料版的「今天喝什麼」正在開發中, 請大家稍等唷</p>
-    <p>- 串接 Line 我要頻估一下我的錢包夠不夠深😅</p>
+    <!-- <p>- 串接 Line 我要頻估一下我的錢包夠不夠深😅</p> -->
     <p>有任何功能建議, 歡迎各位踴躍跟我說, 請洽：noah.wang@atelli.ai</p>
   </div>
-  <div class="container d-flex  border mt-2 p-3">
-    <div class="w-100">
-      <button class="btn btn-primary">產生</button>
+  <div class="container border mt-2 p-3">
+    <div class=" w-100">
+      <div class="h4 mt-1 mb-1">午餐吃：</div>
+      <button class="btn btn-primary food-btn">產生</button>
       <div class="card mt-2 w-100">
         <div class="card-body">
-          <h5 class="card-title">-</h5>
-          <a href="#" class="card-link" target="_blank">Link</a>
+          <h5 class="card-title food-title">-</h5>
+          <a href="#" class="card-link food-link" target="_blank">Link</a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3 w-100">
+      <div class="h4 mt-1 mb-1">飲料喝：</div>
+      <button class="btn btn-primary drink-btn">產生</button>
+      <div class="card mt-2 w-100">
+        <div class="card-body">
+          <h5 class="card-title drink-title">-</h5>
+          <a href="#" class="card-link drink-link" target="_blank">Link</a>
         </div>
       </div>
     </div>
@@ -43,10 +53,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
   integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <script>
-  const btn = document.querySelector('.btn')
-  const title = document.querySelector('.card-title')
-  const link = document.querySelector('.card-link')
-  const data = [
+  const foodBtn = document.querySelector('.food-btn')
+  const foodTitle = document.querySelector('.food-title')
+  const foodLink = document.querySelector('.food-link')
+  const foodData = [
     { 'name': '飽哥健康餐盒', 'link': 'https://maps.app.goo.gl/5cYfRbY4F6q1UgRy6' },
     { 'name': '美而美早餐店', 'link': 'https://maps.app.goo.gl/z1o1oQj1oeDRBeur6' },
     { 'name': '角屋關東煮', 'link': 'https://maps.app.goo.gl/Rx9yenGSu7683Qo59' },
@@ -80,14 +90,54 @@
     { 'name': '老蘿蔔', 'link': 'https://maps.app.goo.gl/RBVpYDuEmdx9cvvP9' },
     { 'name': '麥味登-敦南遠企店', 'link': 'https://maps.app.goo.gl/yP68NJbuqHqNG1pJA' }
   ];
-  btn.addEventListener('click', function () {
+
+  const drinkBtn = document.querySelector('.drink-btn')
+  const drinkTitle = document.querySelector('.drink-title')
+  const drinkLink = document.querySelector('.drink-link')
+  const drinkData = [
+    { name: '外婆的茶屋', link: 'https://maps.app.goo.gl/XPJmiJBakfNqkaTaA' },
+    { name: '清心福全', link: 'https://maps.app.goo.gl/ZxBEuNbHxkH48Mm2A' },
+    { name: '珍珠窩', link: 'https://maps.app.goo.gl/6to9JMhj4ipXqw4G7' },
+    { name: '七盞茶', link: 'https://maps.app.goo.gl/wHwuo3QxELy6KquK9' },
+    { name: '得正', link: 'https://maps.app.goo.gl/wqNgh2YRHFD1MYZH9' },
+    { name: '上宇林', link: 'https://maps.app.goo.gl/Q96ySJoh2gBZnvpC7' },
+    { name: ' 堅果奶 · 茶', link: 'https://maps.app.goo.gl/jk6zVWgshe6A91U26' },
+    { name: '珍煮丹', link: 'https://maps.app.goo.gl/bgeQGcE3nPqbSnaG9' },
+    { name: '可不可熟成紅茶', link: 'https://maps.app.goo.gl/6QokE5EhYPqMFFGG9' },
+    { name: '麻古茶坊', link: 'https://maps.app.goo.gl/3AYPr9fDFyvkPrbj7' },
+    { name: '吾悠茶所', link: 'https://maps.app.goo.gl/QDVzB3NVNU4nMEbf6' },
+    { name: 'TEA TOP', link: 'https://maps.app.goo.gl/rfsoZ6rMjmn2Bqux8' },
+    { name: '50嵐 ', link: 'https://maps.app.goo.gl/7PJXSGJam6sQaFTN6' },
+    { name: '一手私藏世界紅茶', link: 'https://maps.app.goo.gl/mhsYaAbzvQKRdn3Z8' },
+    { name: '一沐日', link: 'https://maps.app.goo.gl/SWqiZxfsrbfE4xNr6' },
+    { name: '3% Three Percent', link: 'https://maps.app.goo.gl/oZsPsPRQHrXwKxCH7' },
+    { name: '十盛熟成奶茶', link: 'https://maps.app.goo.gl/5JKJ1FgZT5Eu4fHU8' },
+    { name: '泰讚了', link: 'https://maps.app.goo.gl/pbjEv4jvWpyToVsaA' },
+    { name: '五桐號', link: 'https://maps.app.goo.gl/GuZJZajLoCZDM6dJA' },
+    { name: '鴻糖茶坊', link: 'https://maps.app.goo.gl/gzgJnuzEoKpdFD3GA' },
+    { name: '山焙', link: 'https://maps.app.goo.gl/p9jCW9UDG1BfBfMt8' },
+  ]
+
+  foodBtn.addEventListener('click', function () {
+    const randomNum = createRandomNum(foodData)
+
+    foodTitle.textContent = foodData[randomNum]['name']
+    foodLink.href = foodData[randomNum]['link']
+  })
+
+  drinkBtn.addEventListener('click', function () {
+    const randomNum = createRandomNum(drinkData)
+
+    drinkTitle.textContent = drinkData[randomNum]['name']
+    drinkLink.href = drinkData[randomNum]['link']
+  })
+
+  const createRandomNum = (data) => {
     const count = data.length
     const randomNum = Math.floor(Math.random() * count)
 
-    title.textContent = data[randomNum]['name']
-    link.href = data[randomNum]['link']
-
-  })
+    return randomNum
+  }
 </script>
 
 </html>
